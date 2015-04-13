@@ -1,18 +1,16 @@
 'use strict';
 
-var util = require('util')
-
 var getDirectChildren = function (permissions, parent) {
   var perm = permissions[parent]
   if (typeof perm === 'undefined' || perm === null) perm = []
-  if (!util.isArray(perm)) perm = [perm]
+  if (!Array.isArray(perm)) perm = [perm]
   return perm
 }
 
 var getUserPermissions = function (assignments, userid) {
   var assigns = assignments[userid]
   if (typeof assigns === 'undefined' || assigns === null) assigns = []
-  if (!util.isArray(assigns)) assigns = [assigns]
+  if (!Array.isArray(assigns)) assigns = [assigns]
   return assigns
 }
 
